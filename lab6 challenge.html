@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab 6 Challenge</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script>
+        window.onload = function(){
+           /* document.getElementById("save_button").addEventListener("click", function(){
+                sessionStorage.name = document.getElementById("name_input").value;
+            }); */
+            
+            document.getElementById("save_button").addEventListener("click", function(){
+                localStorage.name = document.getElementById("name_input").value;
+                if(localStorage.name){
+                   document.getElementById("title").innerHTML = "Welcome " + localStorage.name + "!";
+                   }
+            });
+            
+            /*document.getElementById("show_button").addEventListener("click", function(){
+                if(sessionStorage.name){
+                   document.getElementById("title").innerHTML = "Welcome " + sessionStorage.name + "!";
+                   }
+                
+            }); */
+        }
+        
+        
+        
+        
+        
+        </script>
+        <style>
+            #footer{
+                position: fixed;
+                text-align: center;
+                left: 0px;
+                bottom: 0px;
+                width: 100%;             
+                
+            }
+        
+        </style>
+
+    </head>
+    <body>
+        <div data-role="page">
+            <div data-role="header">
+                <h1>Storage</h1>
+            </div> <!-- end header -->
+            
+            <div data-role="main" "ui-content">
+                <h1 id="title">Welcome</h1>
+                <label for="name">Enter you name in the field below.</label>
+                <input type="text" name="name"id="name_input" placeholder="Your Name" />
+                <button id="save_button">Save</button>
+                <!--<button id="show_button">Show Name</button>  -->
+
+            </div> <!-- end main -->
+            
+            <div id="footer" data-role="footer">
+                <h1>Lab 6 Challenge</h1>
+                <p>Copyright &copy; 2018<?php echo date("Y");?></p>
+        
+            </div> <!-- end footer -->
+        </div>
+    
+    
+    </body>
+    
+</html>
